@@ -6,7 +6,7 @@
 <?import javafx.scene.control.Label?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id="sceneRoot" alignment="center" fx:controller="CoffeeController">
-    <Label fx:id = "titleLabel" text = "Welcome to Coffee Shop 342!" />
+    <Label fx:id = "titleLabel" text = "Create the coffee of your dreams!" />
     <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="orderBox" alignment="center">
         <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id="totalBox" alignment="center">
             <ListView fx:id = "totalListView" />
@@ -26,7 +26,7 @@
                 <!-- <Button fx:id="openServerButton" text="Open Server" /> -->
             </HBox>
             <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="lowButtonsBox" alignment="center">
-                <Button fx:id="newOrderButton" text="New Order" onAction = "#newOrder"/>
+                <Button fx:id="deleteOrderButton" text="Delete Order" onAction = "#deleteOrder"/>
                 <Button fx:id="confirmOrderButton" text="Confirm Order" onAction = "#pressed"/>
             </HBox>
         </VBox>

@@ -15,7 +15,7 @@ public class CoffeeShop extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("Who wants coffee!!!");
 		
-		Parent root = FXMLLoader.load(getClass().getResource("/FXML/CoffeeShopScene.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/FXML/IntroScene.fxml"));
 		Scene coffeeShopScene = new Scene(root, 600, 600);
 		primaryStage.setScene(coffeeShopScene);
 		primaryStage.show();

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id = "introBox" alignment="center" fx:controller="CoffeeController">
+    <Label fx:id = "introLabel" text = "Welcome to Coffee Shop 342!" />
+    <Button fx:id = "newOrderButton" text = "New Order" onAction = "#newOrder" />
+</VBox>
