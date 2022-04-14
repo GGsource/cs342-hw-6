@@ -26,8 +26,8 @@
                 <!-- <Button fx:id="openServerButton" text="Open Server" /> -->
             </HBox>
             <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="lowButtonsBox" alignment="center">
-                <Button fx:id="newOrderButton" text="New Order" onAction = "#pressedMethod"/>
-                <Button fx:id="confirmOrderButton" text="Confirm Order" onAction = "#pressedMethod"/>
+                <Button fx:id="newOrderButton" text="New Order" onAction = "#newOrder"/>
+                <Button fx:id="confirmOrderButton" text="Confirm Order" onAction = "#pressed"/>
             </HBox>
         </VBox>
     </HBox>

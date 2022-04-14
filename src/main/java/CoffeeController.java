@@ -17,8 +17,12 @@ public class CoffeeController implements Initializable {
         //
     }
 
-    public void pressedMethod(ActionEvent e) {
+    public void pressed(ActionEvent e) {
         Button sourceButton = (Button)e.getSource();
         totalListView.getItems().add("Button pressed: " + sourceButton.getText());
+    }
+    public void newOrder(ActionEvent e) {
+        //Clears the list
+        totalListView.getItems().clear();
     }
 }
