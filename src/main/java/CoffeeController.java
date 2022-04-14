@@ -20,6 +20,8 @@ public class CoffeeController implements Initializable {
     public void pressed(ActionEvent e) {
         Button sourceButton = (Button)e.getSource();
         totalListView.getItems().add("Button pressed: " + sourceButton.getText());
+        //In order to make the list autoscroll and show the newest entry:
+        totalListView.scrollTo(totalListView.getItems().size());
     }
     public void newOrder(ActionEvent e) {
         //Clears the list
