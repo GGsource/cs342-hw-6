@@ -19,11 +19,6 @@ public class CoffeeShop extends Application {
 		Scene coffeeShopScene = new Scene(root, 600, 600);
 		primaryStage.setScene(coffeeShopScene);
 		primaryStage.show();
-		
-		Coffee order = new Sugar(new Cream( new ExtraShot(new BasicCoffee())));
-		
-		double cost = order.makeCoffee();
-		System.out.println("Total: "+cost);
 	}
 
 }

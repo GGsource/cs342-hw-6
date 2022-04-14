@@ -12,9 +12,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
 
 public class CoffeeController implements Initializable {
+    Coffee ourOrder;
 
     @FXML
-    private ListView<String> totalListView;
+    private ListView<String> orderListView;
     @FXML
     private VBox introBox;
 
@@ -29,19 +30,21 @@ public class CoffeeController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/OrderScene.fxml"));
         Parent orderBox = loader.load();
         introBox.getScene().setRoot(orderBox);
+        //Create the starter coffee
+        //ourOrder = new BasicCoffee();
 
     }
 
     //When an addon is pressed add it to the listview:
     public void pressed(ActionEvent e) {
         Button sourceButton = (Button)e.getSource();
-        totalListView.getItems().add("Button pressed: " + sourceButton.getText());
+        orderListView.getItems().add("Button pressed: " + sourceButton.getText());
         //In order to make the list autoscroll and show the newest entry:
-        totalListView.scrollTo(totalListView.getItems().size());
+        orderListView.scrollTo(orderListView.getItems().size());
     }
     //Delete current order:
     public void deleteOrder(ActionEvent e) {
         //Clears the list
-        totalListView.getItems().clear();
+        orderListView.getItems().clear();
     }
 }

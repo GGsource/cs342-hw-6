@@ -8,10 +8,8 @@
 <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id="sceneRoot" alignment="center" fx:controller="CoffeeController">
     <Label fx:id = "titleLabel" text = "Create the coffee of your dreams!" />
     <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="orderBox" alignment="center">
-        <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id="totalBox" alignment="center">
-            <ListView fx:id = "totalListView" />
-            <Label fx:id = "totalLabel" text = "total: $0.00" />
-
+        <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id="orderBox" alignment="center">
+            <ListView fx:id = "orderListView" />
         </VBox>
         <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id="buttonsBox" alignment="center">
             <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="topButtonsBox" alignment="center">
