@@ -15,14 +15,14 @@
         </VBox>
         <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id="buttonsBox" alignment="center">
             <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="topButtonsBox" alignment="center">
-                <Button fx:id="extraShotButton" text="Extra Shot" onAction = "#pressedMethod"/>
-                <Button fx:id="creamButton" text="Cream" onAction = "#pressedMethod"/>
-                <Button fx:id="sugarButton" text="Sugar" onAction = "#pressedMethod"/>
+                <Button fx:id="extraShotButton" text="Extra Shot" onAction = "#pressed"/>
+                <Button fx:id="creamButton" text="Cream" onAction = "#pressed"/>
+                <Button fx:id="sugarButton" text="Sugar" onAction = "#pressed"/>
             </HBox>
             <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="midButtonsBox" alignment="center">
-                <Button fx:id="lemonJuiceButton" text="Lemon Juice" onAction = "#pressedMethod"/>
-                <Button fx:id="caramelButton" text="Caramel" onAction = "#pressedMethod"/>
-                <Button fx:id="nuclearWasteButton" text="Nuclear Waste" onAction = "#pressedMethod"/>
+                <Button fx:id="lemonJuiceButton" text="Lemon Juice" onAction = "#pressed"/>
+                <Button fx:id="caramelButton" text="Caramel" onAction = "#pressed"/>
+                <Button fx:id="nuclearWasteButton" text="Nuclear Waste" onAction = "#pressed"/>
                 <!-- <Button fx:id="openServerButton" text="Open Server" /> -->
             </HBox>
             <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="lowButtonsBox" alignment="center">
