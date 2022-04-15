@@ -6,7 +6,7 @@ public class BasicCoffee implements Coffee {
 	@Override
 	public double makeCoffee() {
 
-		System.out.println("Black Coffee: $3.99");
+		//System.out.println("Black Coffee: $3.99");
 		
 		return cost;
 	}

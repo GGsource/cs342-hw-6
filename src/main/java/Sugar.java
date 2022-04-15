@@ -13,7 +13,7 @@ private double cost = .50;
 	
 	private double addSugar() {
 		
-		System.out.println(" + sugar: $.50");
+		//System.out.println(" + sugar: $"+cost);
 		
 		return cost;
 	}

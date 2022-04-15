@@ -5,7 +5,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Label?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id = "introBox" alignment="center" fx:controller="CoffeeController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id = "introRoot" alignment="center" fx:controller="CoffeeController">
     <Label fx:id = "introLabel" text = "Welcome to Coffee Shop 342!" />
-    <Button fx:id = "newOrderButton" text = "New Order" onAction = "#newOrder" />
+    <Button fx:id = "startOrderButton" text = "Start Order" onAction = "#startOrder" />
 </VBox>

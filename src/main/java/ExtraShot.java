@@ -12,7 +12,7 @@ public class ExtraShot extends CoffeeDecorator {
 	}
 	
 	private double addShot() {
-		System.out.println(" + extra shot: $1.20");
+		//System.out.println(" + extra shot: $"+cost);
 		
 		return cost;
 	}

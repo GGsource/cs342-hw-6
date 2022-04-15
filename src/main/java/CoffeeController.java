@@ -2,49 +2,114 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
 
 public class CoffeeController implements Initializable {
-    Coffee ourOrder;
+    OrderMaker myOrder;
 
     @FXML
     private ListView<String> orderListView;
     @FXML
-    private VBox introBox;
+    private VBox introRoot;
+    @FXML
+    private VBox orderRoot;
+    @FXML
+    private VBox totalRoot;
+    @FXML
+    private Label totalLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //
+        myOrder = new OrderMaker();
     }
 
     //On New Order being pressed:
-    public void newOrder(ActionEvent e) throws IOException {
+    public void startOrder(ActionEvent e) throws IOException {
         //Load orderScene and set it as the new root
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/OrderScene.fxml"));
-        Parent orderBox = loader.load();
-        introBox.getScene().setRoot(orderBox);
-        //Create the starter coffee
-        //ourOrder = new BasicCoffee();
-
+        FXMLLoader orderLoader = new FXMLLoader(getClass().getResource("/FXML/OrderScene.fxml"));
+        Parent orderBox = orderLoader.load();
+        introRoot.getScene().setRoot(orderBox);
+        //get successor Controller to affect next scene before we enter it
+        CoffeeController orderController = orderLoader.getController();
+        //Clear in case this isn't our first time ordering
+        orderController.deleteOrder(e);
     }
 
-    //When an addon is pressed add it to the listview:
-    public void pressed(ActionEvent e) {
-        Button sourceButton = (Button)e.getSource();
-        orderListView.getItems().add("Button pressed: " + sourceButton.getText());
-        //In order to make the list autoscroll and show the newest entry:
-        orderListView.scrollTo(orderListView.getItems().size());
+    //OnAction Methods for all our Coffee Addons
+    public void whip(ActionEvent e) {
+        myOrder.addCream();
+        orderListView.getItems().add(" + cream: $0.50");
+        autoScroll();
     }
-    //Delete current order:
+    public void boost(ActionEvent e) {
+        myOrder.addExtraShot();
+        orderListView.getItems().add(" + extra shot: $1.20");
+        autoScroll();
+    }
+    public void sweeten(ActionEvent e) {
+        myOrder.addSugar();
+        orderListView.getItems().add(" + sugar: $0.50");
+        autoScroll();
+    }
+    public void embitter(ActionEvent e) {
+        myOrder.addLemonJuice();
+        orderListView.getItems().add(" + lemon juice: $0.75");
+        autoScroll();
+    }
+    public void caramelize(ActionEvent e) {
+        myOrder.addCaramel();
+        orderListView.getItems().add(" + caramel: $0.99");
+        autoScroll();
+    }
+    public void nuke(ActionEvent e) {
+        myOrder.addNuclearWase();
+        orderListView.getItems().add(" + nuclear waste: $49999.99");
+        autoScroll();
+    }
+    //Delete current order to restart selection
     public void deleteOrder(ActionEvent e) {
         //Clears the list
         orderListView.getItems().clear();
+        //Start coffee fresh
+        myOrder.clear();
+        orderListView.getItems().add("Black Coffee: $3.99");
+    }
+    //Confirm the current choice and move onto total Screen
+    public void confirmOrder(ActionEvent e) throws IOException {
+        //Order is confirmed, take us to total screen
+        FXMLLoader totalLoader = new FXMLLoader(getClass().getResource("/FXML/TotalScene.fxml"));
+        Parent totalBox = totalLoader.load();
+        orderRoot.getScene().setRoot(totalBox);
+        CoffeeController totalController = totalLoader.getController();
+        totalController.totalLabel.setText("Your final total is: $" + myOrder.getTotal());
+    }
+
+    //Total Scene OnAction Methods
+    public void newOrder(ActionEvent e) throws IOException {
+        //Send us back to the Order Scene and clear it
+        FXMLLoader newOrderLoader = new FXMLLoader(getClass().getResource("/FXML/OrderScene.fxml"));
+        Parent orderBox = newOrderLoader.load();
+        totalRoot.getScene().setRoot(orderBox);
+        CoffeeController newOrdeController = newOrderLoader.getController();
+        newOrdeController.deleteOrder(e);
+    }
+    public void quit(ActionEvent e) {
+        //Close the window and end the process
+        Platform.exit();
+        System.exit(0);
+    }
+
+    //Helper function
+    private void autoScroll() {
+        //Set the scroll to the newest item so we can always see most recent
+        orderListView.scrollTo(orderListView.getItems().size());
     }
 }
