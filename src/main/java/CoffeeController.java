@@ -24,6 +24,8 @@ public class CoffeeController implements Initializable {
     @FXML
     private VBox totalRoot;
     @FXML
+    private Label finalOrderLabel;
+    @FXML
     private Label totalLabel;
 
     @Override
@@ -89,6 +91,16 @@ public class CoffeeController implements Initializable {
         Parent totalBox = totalLoader.load();
         orderRoot.getScene().setRoot(totalBox);
         CoffeeController totalController = totalLoader.getController();
+
+        //Set changes on the new scene
+        
+        //Display final order
+        String finalOrderString = "You chose:\n";
+        for (String s : orderListView.getItems()) {
+            finalOrderString += s + "\n";
+        }
+        totalController.finalOrderLabel.setText(finalOrderString);
+        //Display Total cost
         totalController.totalLabel.setText("Your final total is: $" + myOrder.getTotal());
     }
 

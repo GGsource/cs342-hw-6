@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id = "totalRoot" alignment="center" fx:controller="CoffeeController">
+    <Label fx:id = "finalOrderLabel" text = "You chose: " />
     <Label fx:id = "totalLabel" text = "Your final total is: " />
     <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id = "endBox" alignment="center">
         <Button fx:id = "newOrderButton" text = "New Order" onAction = "#newOrder" />
