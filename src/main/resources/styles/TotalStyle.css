@@ -1,0 +1,9 @@
+.label {
+    -fx-font-size: 10;
+}
+.order {
+    -fx-text-alignment: right;
+}
+.title {
+    -fx-font-size: 20;
+}

@@ -6,26 +6,27 @@
 <?import javafx.scene.control.Label?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id="orderRoot" alignment="center" fx:controller="CoffeeController">
-    <Label fx:id = "titleLabel" text = "Create the coffee of your dreams!" />
+    <Label fx:id = "titleLabel" text = "Create the coffee of your dreams!" wrapText = "true" textAlignment = "CENTER" />
     <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="orderBox" alignment="center">
         <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id="listBox" alignment="center">
-            <ListView fx:id = "orderListView" />
+            <ListView fx:id = "orderListView" prefWidth = "250"/>
         </VBox>
         <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id="buttonsBox" alignment="center">
-            <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="topButtonsBox" alignment="center">
-                <Button fx:id="extraShotButton" text="Extra Shot" onAction = "#boost"/>
-                <Button fx:id="creamButton" text="Cream" onAction = "#whip"/>
-                <Button fx:id="sugarButton" text="Sugar" onAction = "#sweeten"/>
+            <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="topAddonsBox" alignment="center">
+                <Button fx:id="extraShotButton" text="Extra Shot" onAction = "#boost" styleClass = "addon"/>
+                <Button fx:id="creamButton" text="Cream" onAction = "#whip" styleClass = "addon"/>
             </HBox>
-            <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="midButtonsBox" alignment="center">
-                <Button fx:id="lemonJuiceButton" text="Lemon Juice" onAction = "#embitter"/>
-                <Button fx:id="caramelButton" text="Caramel" onAction = "#caramelize"/>
-                <Button fx:id="nuclearWasteButton" text="Nuclear Waste" onAction = "#nuke"/>
-                <!-- <Button fx:id="openServerButton" text="Open Server" /> -->
+            <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="midAddonsBox" alignment="center">
+                <Button fx:id="sugarButton" text="Sugar" onAction = "#sweeten" styleClass = "addon"/>
+                <Button fx:id="lemonJuiceButton" text="Lemon Juice" onAction = "#embitter" styleClass = "addon"/>
             </HBox>
-            <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="lowButtonsBox" alignment="center">
-                <Button fx:id="deleteOrderButton" text="Delete Order" onAction = "#deleteOrder"/>
-                <Button fx:id="confirmOrderButton" text="Confirm Order" onAction = "#confirmOrder"/>
+            <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="lowAddonsBox" alignment="center">
+                <Button fx:id="caramelButton" text="Caramel" onAction = "#caramelize" styleClass = "addon"/>
+                <Button fx:id="nuclearWasteButton" text="Nuclear Waste" onAction = "#nuke" styleClass = "addon, nuke"/>
+            </HBox>
+            <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id="selectionButtonsBox" alignment="center">
+                <Button fx:id="deleteOrderButton" text="Delete Order" onAction = "#deleteOrder" styleClass = "delete"/>
+                <Button fx:id="confirmOrderButton" text="Confirm Order" onAction = "#confirmOrder" styleClass = "confirm"/>
             </HBox>
         </VBox>
     </HBox>

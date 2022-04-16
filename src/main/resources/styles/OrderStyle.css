@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "fontstuck";
+	src: url("/fonts/fontstuck.ttf");
+}
+.vbox {
+    -fx-background-color: #fde1a1;
+}
+.hbox {
+    -fx-spacing: 10; 
+}
+.list-cell {
+    -fx-font: 10 "fontstuck";
+    -fx-text-fill: #996b00;
+    -fx-alignment: center-right;
+}
+.list-cell:odd {
+    -fx-background-color: #ffd675;
+}
+.list-cell:even {
+    -fx-background-color: #ffc53d;
+}
+.label {
+    -fx-text-fill: #ce9103;
+    -fx-font: 30 "fontstuck";
+
+}
+.button {
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+    -fx-font: 10 "fontstuck";
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+.addon {
+    -fx-background-color: #00ffee;
+    -fx-text-fill: #008077;
+    -fx-border-color: #008077;
+    -fx-border-width: 5;
+    -fx-pref-width: 120;
+    -fx-pref-height: 60;
+}
+.nuke {
+    -fx-background-color: #66ff00;
+    -fx-text-fill: #3d9900;
+    -fx-border-color: #3d9900;
+}
+.delete{
+    -fx-background-color: #ff0000;
+    -fx-text-fill: #a30000;
+}
+.confirm{
+    -fx-background-color: #00ff5e;
+    -fx-text-fill: #00a34c;
+}

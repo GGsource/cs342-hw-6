@@ -6,10 +6,11 @@
 <?import javafx.scene.control.Label?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" styleClass="vbox" fx:id = "totalRoot" alignment="center" fx:controller="CoffeeController">
-    <Label fx:id = "finalOrderLabel" text = "You chose: " />
-    <Label fx:id = "totalLabel" text = "Your final total is: " />
+    <Label fx:id = "totalTitleLabel" text = "Your order is:" styleClass = "title" />
+    <Label fx:id = "finalOrderLabel" text = "You chose: " styleClass = "order" />
+    <Label fx:id = "totalLabel" text = "Your final total is: " styleClass = "title" wrapText = "true"/>
     <HBox xmlns:fx="http://javafx.com/fxml/1" styleClass="hbox" fx:id = "endBox" alignment="center">
         <Button fx:id = "newOrderButton" text = "New Order" onAction = "#newOrder" />
-        <Button fx:id = "quitButton" text = "Quit" onAction = "#quit" />
+        <Button fx:id = "quitButton" text = "Quit" onAction = "#quit" styleClass = "delete" />
     </HBox>
 </VBox>

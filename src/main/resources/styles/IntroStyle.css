@@ -1,0 +1,17 @@
+@font-face {
+	font-family: "fontstuck";
+	src: url("/fonts/fontstuck.ttf");
+}
+.vbox {
+    -fx-background-color: black;
+    -fx-spacing : 20;
+}
+.label {
+    -fx-text-fill: white;
+    -fx-font: 40 "fontstuck";
+
+}
+.button {
+    -fx-background-color: white;
+    -fx-font: 30 "fontstuck";
+}
