@@ -1,7 +1,7 @@
 
 public class BasicCoffee implements Coffee {
 
-	private double cost = 3.99;
+	final static double cost = 3.99;
 	
 	@Override
 	public double makeCoffee() {

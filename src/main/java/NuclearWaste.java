@@ -1,5 +1,5 @@
 public class NuclearWaste extends CoffeeDecorator {
-    private double cost = 49999.99;
+    final static double cost = 49999.99;
 
     NuclearWaste(Coffee specialCoffee) {
         super(specialCoffee);

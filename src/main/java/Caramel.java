@@ -1,5 +1,5 @@
 public class Caramel extends CoffeeDecorator{
-	private double cost = .99;
+	final static double cost = .99;
 	
 	Caramel(Coffee specialCoffee){
 		super(specialCoffee);

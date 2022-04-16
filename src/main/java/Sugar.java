@@ -1,7 +1,7 @@
 
 public class Sugar extends CoffeeDecorator{
 
-private double cost = .50;
+final static double cost = .50;
 	
 	Sugar(Coffee specialCoffee){
 		super(specialCoffee);
